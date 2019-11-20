@@ -15,13 +15,6 @@ namespace proyectoLibrary.Interface
         void GuardarInformacionPersonal(string Nombre, byte DPI);
 
         /// <summary>
-        /// Agrega un Vehiculo a una lista de vehiculos
-        /// usar la lista Global de Program.cs de tipo Vehiculo 
-        /// </summary>
-        /// <param name="vehiculo">Del tipo Vehiculo (uno de nuestros modelos) </param>
-        void AgregarVehiculoALista(Vehiculo vehiculo);
-
-        /// <summary>
         /// Guarda lista de vehiculos de Form2 a un Visitante
         /// usar el Visitante Global de Program.cs
         /// </summary>
