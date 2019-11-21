@@ -4,7 +4,7 @@ using proyectoLibrary.Modelos;
 
 namespace proyectoLibrary.Interface
 {
-    public interface IVisitante
+    public interface ICuentaParqueo
     {
         /// <summary>
         /// Guardar informacion de Form1 a un Visitante

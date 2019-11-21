@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace proyectoLibrary
 {
-    public class Antigua : IVisitante
+    public class CuentaParqueo : ICuentaParqueo
     {
         static Visitante GetVisitante()
         {
@@ -14,7 +14,7 @@ namespace proyectoLibrary
 
         private Visitante visitante;
 
-        public Antigua()
+        public CuentaParqueo()
         {
             visitante = GetVisitante();
         }
@@ -34,7 +34,7 @@ namespace proyectoLibrary
             
         }
 
-        public Visitante GetAntiguaVisitante()
+        public Visitante GetCuenta()
         {
             return visitante;
         }
