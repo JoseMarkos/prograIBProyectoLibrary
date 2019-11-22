@@ -7,7 +7,7 @@ namespace proyectoLibrary
 {
     public class CuentaParqueo : ICuentaParqueo
     {
-        static Visitante GetVisitante()
+        private static Visitante GetVisitante()
         {
             return new Visitante();
         }
@@ -19,9 +19,10 @@ namespace proyectoLibrary
             visitante = GetVisitante();
         }
 
-        public void GuardarInformacionPersonal(string Nombre, byte DPI)
+        public void GuardarInformacionPersonal(string nombre, byte dpi)
         {
-            visitante.Nombre = Nombre;
+            visitante.Nombre = nombre;
+            visitante.DPI = dpi;
         }
 
         public void GuardarListaDeCarros(List<Vehiculo> Lista)

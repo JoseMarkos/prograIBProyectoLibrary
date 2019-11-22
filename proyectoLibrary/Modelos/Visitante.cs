@@ -3,12 +3,17 @@ namespace proyectoLibrary.Modelos
 {
     public class Visitante
     {
-        #region public propiedades
-        public string Nombre { get; set; }
+        #region private propiedades
+
+        private string nombre { get; set; }
+
         #endregion
 
-        public Visitante()
+        public Visitante(string nombre)
         {
+            nombre = nombre;
+
+            private const string Nombre = nombre;
         }
     }
 }
