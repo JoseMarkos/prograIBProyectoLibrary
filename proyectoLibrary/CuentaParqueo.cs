@@ -11,7 +11,8 @@ namespace proyectoLibrary
 
         public string Nombre { get; private set; }
         public byte DPI { get; private set; }
-        public Parqueo Parqueo { get => parqueo; set => parqueo = value; }
+
+        public Parqueo Parqueo { get => parqueo; private set => parqueo = value; }
 
         public List<Vehiculo> Vehiculos = new List<Vehiculo>();
 
