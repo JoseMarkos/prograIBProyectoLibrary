@@ -1,7 +1,7 @@
 ﻿using System;
 namespace proyectoLibrary.Modelos
 {
-    public class Vehiculo
+    public sealed class Vehiculo
     {
         #region public prpiedades
 

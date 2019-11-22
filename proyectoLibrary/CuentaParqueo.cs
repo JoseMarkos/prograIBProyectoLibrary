@@ -5,24 +5,27 @@ using System.Collections.Generic;
 
 namespace proyectoLibrary
 {
-    public class CuentaParqueo : ICuentaParqueo
+    public sealed class CuentaParqueo : ICuentaParqueo
     {
-        private static Visitante GetVisitante()
-        {
-            return new Visitante();
-        }
+        #region public properties
 
-        private Visitante visitante;
+        public string Nombre { get; private set; }
+        public byte DPI { get; private set; }
+
+        public List<Vehiculo> vehiculos = new List<Vehiculo>();
+
+        public Parqueo parqueo = new Parqueo();
+
+        #endregion
 
         public CuentaParqueo()
         {
-            visitante = GetVisitante();
         }
 
         public void GuardarInformacionPersonal(string nombre, byte dpi)
         {
-            visitante.Nombre = nombre;
-            visitante.DPI = dpi;
+            Nombre = nombre;
+            DPI = dpi;
         }
 
         public void GuardarListaDeCarros(List<Vehiculo> Lista)
@@ -33,11 +36,6 @@ namespace proyectoLibrary
         public void GuardarParqueo(Parqueo parqueo)
         {
             
-        }
-
-        public Visitante GetCuenta()
-        {
-            return visitante;
         }
     }
 }
