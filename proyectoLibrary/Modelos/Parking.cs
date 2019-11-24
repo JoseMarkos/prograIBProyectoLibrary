@@ -4,7 +4,7 @@ namespace proyectoLibrary.Modelos
     public sealed class Parking
     {
         #region public propiedades
-        public string Name;
+        public string Name { get; private set; }
 
         #endregion
 

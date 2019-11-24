@@ -3,6 +3,7 @@
     public sealed class Vehicle
     {
         #region Enums
+
         public enum Vehicletype
         {
             Sedan,
@@ -13,20 +14,23 @@
             Camioneta
         }
 
-        enum VehicleSize
+        /// <summary>
+        /// Normal: 3 to 6m
+        /// Grande: 6 to 8m
+        /// </summary>
+        public enum VehicleSize
         {
-            Big,
             Normal,
-            Small
+            Grande
         }
 
         #endregion
 
         #region public prpiedades
 
-        private Vehicletype Type;
-        private VehicleSize Size;
-        private string LicensePlate;
+        public Vehicletype Type { get; private set; }
+        public string LicensePlate { get; private set; }
+        public VehicleSize Size { get; private set; }
 
         #endregion
 
@@ -42,31 +46,27 @@
             switch (_vehicletype)
             {
                 case Vehicletype.Sedan:
-                    Size = VehicleSize.Big;
+                    Size = VehicleSize.Normal;
                     break;
 
                 case Vehicletype.Coupe:
-                    Size = VehicleSize.Big;
+                    Size = VehicleSize.Normal;
                     break;
 
                 case Vehicletype.HatchBack:
-                    Size = VehicleSize.Big;
+                    Size = VehicleSize.Normal;
                     break;
 
                 case Vehicletype.SUV:
-                    Size = VehicleSize.Big;
+                    Size = VehicleSize.Normal;
                     break;
 
                 case Vehicletype.PickUp:
-                    Size = VehicleSize.Big;
+                    Size = VehicleSize.Grande;
                     break;
 
                 case Vehicletype.Camioneta:
-                    Size = VehicleSize.Big;
-                    break;
-
-                default:
-                    Size = VehicleSize.Big;
+                    Size = VehicleSize.Grande;
                     break;
             }
         }
