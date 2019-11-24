@@ -12,9 +12,9 @@ namespace proyectoLibrary
         public string Nombre { get; private set; }
         public byte DPI { get; private set; }
 
-        public List<Vehiculo> vehiculos = new List<Vehiculo>();
+        public List<Vehicle> Vehiculos = new List<Vehicle>();
 
-        public Parqueo parqueo = new Parqueo();
+        public Parqueo Parqueo = new Parqueo();
 
         #endregion
 
@@ -28,9 +28,9 @@ namespace proyectoLibrary
             DPI = dpi;
         }
 
-        public void GuardarListaDeCarros(List<Vehiculo> Lista)
+        public void GuardarListaDeCarros(List<Vehicle> Lista)
         {
-            
+            Vehiculos = Lista;
         }
 
         public void GuardarParqueo(Parqueo parqueo)

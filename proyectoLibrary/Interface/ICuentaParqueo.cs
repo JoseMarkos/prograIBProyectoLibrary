@@ -17,8 +17,8 @@ namespace proyectoLibrary.Interface
         /// Guarda lista de vehiculos de Form2 a un Visitante
         /// usar el Visitante Global de Program.cs
         /// </summary>
-        /// <param name="lista">Lista tipo Vehiculo global </param>
-        void GuardarListaDeCarros(List<Vehiculo> lista);
+        /// <param name="lista">Lista tipo Vehicle global </param>
+        void GuardarListaDeCarros(List<Vehicle> lista);
 
         /// <summary>
         /// Guarda parqueo de Form3 a un Visitiante
