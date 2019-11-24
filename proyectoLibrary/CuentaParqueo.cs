@@ -14,7 +14,7 @@ namespace proyectoLibrary
 
         public List<Vehicle> Vehiculos = new List<Vehicle>();
 
-        public Parqueo Parqueo = new Parqueo();
+        public Parking Parqueo = new Parking();
 
         #endregion
 
@@ -33,7 +33,7 @@ namespace proyectoLibrary
             Vehiculos = Lista;
         }
 
-        public void GuardarParqueo(Parqueo parqueo)
+        public void GuardarParqueo(Parking parqueo)
         {
             
         }

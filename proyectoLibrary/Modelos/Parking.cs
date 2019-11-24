@@ -1,13 +1,13 @@
 ﻿using System;
 namespace proyectoLibrary.Modelos
 {
-    public sealed class Parqueo
+    public sealed class Parking
     {
         #region public propiedades
 
         #endregion
 
-        public Parqueo()
+        public Parking()
         {
 
         }

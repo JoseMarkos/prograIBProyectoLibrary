@@ -35,7 +35,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interface\ICuentaParqueo.cs" />
     <Compile Include="Modelos\Vehicle.cs" />
-    <Compile Include="Modelos\Parqueo.cs" />
+    <Compile Include="Modelos\Parking.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
