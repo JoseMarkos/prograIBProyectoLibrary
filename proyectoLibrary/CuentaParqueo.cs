@@ -28,14 +28,11 @@ namespace proyectoLibrary
             DPI = dpi;
         }
 
-        public void GuardarListaDeCarros(List<Vehicle> Lista)
+        public void GuardarListaDeCarros(List<Vehicle> list)
         {
-            Vehiculos = Lista;
+            Vehiculos = list;
         }
 
-        public void GuardarParqueo(Parking parqueo)
-        {
-            
-        }
+        public void GuardarParqueo(Parking parqueo) => Parqueo = parqueo;
     }
 }

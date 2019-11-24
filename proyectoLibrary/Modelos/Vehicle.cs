@@ -3,7 +3,7 @@
     public sealed class Vehicle
     {
         #region Enums
-        enum Vehicletype
+        public enum Vehicletype
         {
             Sedan,
             Coupe,
@@ -26,12 +26,49 @@
 
         private Vehicletype Type;
         private VehicleSize Size;
-        private string LicensePlate { get; set; }
+        private string LicensePlate;
 
         #endregion
 
-        public Vehicle()
+        public Vehicle(Vehicletype _vehicletype, string _licensePlate)
         {
+            Type = _vehicletype;
+            LicensePlate = _licensePlate;
+            SetVehicleSize(Type);
+        }
+
+        private void SetVehicleSize(Vehicletype _vehicletype)
+        {
+            switch (_vehicletype)
+            {
+                case Vehicletype.Sedan:
+                    Size = VehicleSize.Big;
+                    break;
+
+                case Vehicletype.Coupe:
+                    Size = VehicleSize.Big;
+                    break;
+
+                case Vehicletype.HatchBack:
+                    Size = VehicleSize.Big;
+                    break;
+
+                case Vehicletype.SUV:
+                    Size = VehicleSize.Big;
+                    break;
+
+                case Vehicletype.PickUp:
+                    Size = VehicleSize.Big;
+                    break;
+
+                case Vehicletype.Camioneta:
+                    Size = VehicleSize.Big;
+                    break;
+
+                default:
+                    Size = VehicleSize.Big;
+                    break;
+            }
         }
     }
 }
