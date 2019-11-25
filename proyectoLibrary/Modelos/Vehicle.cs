@@ -30,15 +30,21 @@
 
         public Vehicletype Type { get; private set; }
         public string LicensePlate { get; private set; }
-        public VehicleSize Size { get; private set; }
+        private VehicleSize Size { get; set; }
+
+        public string Owner { get; set; }
+
+        public string Parking { get; set; }
 
         #endregion
 
-        public Vehicle(Vehicletype _vehicletype, string _licensePlate)
+        public Vehicle(Vehicletype _vehicletype, string _licensePlate, string _owner, string _parking)
         {
             Type = _vehicletype;
             LicensePlate = _licensePlate;
             SetVehicleSize(Type);
+            Owner = _owner;
+            Parking = _parking;
         }
 
         private void SetVehicleSize(Vehicletype _vehicletype)
