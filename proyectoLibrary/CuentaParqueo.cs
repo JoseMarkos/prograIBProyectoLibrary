@@ -9,12 +9,14 @@ namespace proyectoLibrary
     {
         #region public properties
 
-        public string Nombre { get; private set; }
+        public string NombreCompleto { get; private set; }
         public byte DPI { get; private set; }
 
-        public List<Vehicle> Vehiculos;
+        public List<Vehicle> ListaVehiculos;
 
-        public Parking Parqueo;
+        public byte Vehiculos { get; private set; }
+
+        public string ParqueoElegido;
 
         #endregion
 
@@ -24,12 +26,16 @@ namespace proyectoLibrary
 
         public void GuardarInformacionPersonal(string nombre, byte dpi)
         {
-            Nombre = nombre;
+            NombreCompleto = nombre;
             DPI = dpi;
         }
 
-        public void GuardarListaDeCarros(List<Vehicle> list) => Vehiculos = list;
+        public void GuardarListaDeCarros(List<Vehicle> list)
+        {
+            ListaVehiculos = list;
+            Vehiculos = (byte)ListaVehiculos.Count;
+        }
 
-        public void GuardarParqueo(Parking parqueo) => Parqueo = parqueo;
+        public void GuardarParqueo(string parqueo) => ParqueoElegido = parqueo;
     }
 }

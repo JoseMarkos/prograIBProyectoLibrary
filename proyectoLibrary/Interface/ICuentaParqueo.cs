@@ -25,6 +25,6 @@ namespace proyectoLibrary.Interface
         /// usar el visitante Global de Program.cs
         /// </summary>
         /// <param name="parqueo"></param>
-        void GuardarParqueo(Parking parqueo);
+        void GuardarParqueo(string parqueo);
     }
 }
