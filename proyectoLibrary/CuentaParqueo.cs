@@ -2,12 +2,15 @@
 using proyectoLibrary.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace proyectoLibrary
 {
     public sealed class CuentaParqueo : ICuentaParqueo
     {
         #region public properties
+        private static int id;
+        public byte ID { get; private set; }
 
         public string NombreCompleto { get; private set; }
         public byte DPI { get; private set; }
@@ -22,7 +25,11 @@ namespace proyectoLibrary
 
         public CuentaParqueo()
         {
+            id++;
+            ID = (byte)id;
         }
+
+        ~CuentaParqueo() => id--;
 
         public void GuardarInformacionPersonal(string nombre, byte dpi)
         {
