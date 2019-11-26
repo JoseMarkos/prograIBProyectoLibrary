@@ -33,17 +33,19 @@
         private VehicleSize Size { get; set; }
 
         public string Owner { get; set; }
+        public byte OwnerID { get; set; }
 
         public string Parking { get; set; }
 
         #endregion
 
-        public Vehicle(Vehicletype _vehicletype, string _licensePlate, string _owner, string _parking)
+        public Vehicle(Vehicletype _vehicletype, string _licensePlate, string _owner, byte _ownerID, string _parking)
         {
             Type = _vehicletype;
             LicensePlate = _licensePlate;
             SetVehicleSize(Type);
             Owner = _owner;
+            OwnerID = _ownerID;
             Parking = _parking;
         }
 
