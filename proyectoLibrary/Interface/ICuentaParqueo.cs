@@ -10,8 +10,7 @@ namespace proyectoLibrary.Interface
         /// usar el Visitante Global de Program.cs
         /// </summary>
         /// <param name="nombre">Puede venir de un inputtext.Text por  ejemplo</param>
-        /// <param name="dpi">Puede venir de un inputtext.Text (convertir antes byte) </param>
-        void GuardarInformacionPersonal(string nombre, byte dpi);
+        void GuardarInformacionPersonal(string nombre);
 
         /// <summary>
         /// Guarda lista de vehiculos de Form2 a un Visitante
