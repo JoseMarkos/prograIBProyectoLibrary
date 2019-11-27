@@ -28,24 +28,26 @@
 
         #region public prpiedades
 
+        public string Owner { get; set; }
+        public byte OwnerID { get; set; }
         public Vehicletype Type { get; private set; }
         public string LicensePlate { get; private set; }
         private VehicleSize Size { get; set; }
-
-        public string Owner { get; set; }
-        public byte OwnerID { get; set; }
-
         public string Parking { get; set; }
 
         #endregion
 
-        public Vehicle(Vehicletype _vehicletype, string _licensePlate, string _owner, byte _ownerID, string _parking)
+        public Vehicle(string _owner
+            , byte _ownerID
+            , Vehicletype _vehicletype
+            , string _licensePlate
+            , string _parking)
         {
+            Owner = _owner;
+            OwnerID = _ownerID;
             Type = _vehicletype;
             LicensePlate = _licensePlate;
             SetVehicleSize(Type);
-            Owner = _owner;
-            OwnerID = _ownerID;
             Parking = _parking;
         }
 
