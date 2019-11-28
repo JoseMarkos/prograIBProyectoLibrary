@@ -4,6 +4,7 @@ namespace proyectoLibrary.Modelos
 {
     public sealed class Parking
     {
+        #region Enum
         public enum ParkingQuadrant
         {
             NorthEast,
@@ -11,6 +12,7 @@ namespace proyectoLibrary.Modelos
             SouthEast,
             SouthWest
         }
+        #endregion
 
         #region public propiedades
         public string Name { get; private set; }
