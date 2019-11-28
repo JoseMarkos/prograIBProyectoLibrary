@@ -26,7 +26,7 @@
 
         #endregion
 
-        #region public prpiedades
+        #region props
 
         public string Owner { get; set; }
         public byte OwnerID { get; set; }

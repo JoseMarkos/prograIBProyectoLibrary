@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace proyectoLibrary.Modelos
 {
@@ -23,7 +22,8 @@ namespace proyectoLibrary.Modelos
 
         public byte NormalSizeCapacity { get; private set; }
         public byte BigSizeCapacity { get; private set; }
-
+        private static byte freeSpaces;
+        public byte FreeSpaces { get; private set; }
         #endregion
 
         public Parking(string _name, ParkingQuadrant _quadrant, List<string> _services, byte _normal, byte _big)
@@ -34,11 +34,34 @@ namespace proyectoLibrary.Modelos
             NormalSizeCapacity = _normal;
             BigSizeCapacity = _big;
             SetCapacity();
+            SetFreeSpaces();
         }
 
         private void SetCapacity()
         {
-            Capacity = (byte) (NormalSizeCapacity + BigSizeCapacity);
+            Capacity = (byte)(NormalSizeCapacity + BigSizeCapacity);
+        }
+
+        private void SetFreeSpaces()
+        {
+            freeSpaces = Capacity;
+            FreeSpaces = freeSpaces;
+        }
+
+        public void DiscountFreeSpaces()
+        {
+            freeSpaces -= 1;
+            FreeSpaces = freeSpaces;
+        }
+
+        private bool IsFullHouse()
+        {
+            if (freeSpaces > 0)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
