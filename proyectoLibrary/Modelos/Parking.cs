@@ -5,6 +5,7 @@ namespace proyectoLibrary.Modelos
     public sealed class Parking
     {
         #region Enum
+
         public enum ParkingQuadrant
         {
             NorthEast,
