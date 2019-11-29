@@ -24,6 +24,31 @@
             Grande
         }
 
+        public enum licensePlatePrefix
+        {
+            A,
+            C,
+            CC,
+            CD,
+            DIS,
+            E,
+            EXT,
+            M,
+            MI,
+            O,
+            P,
+            TC,
+            TRC,
+            U
+        }
+
+        public enum licensePlatePrefixLevel
+        {
+            one = 1,
+            two = 2,
+            tree = 3
+        }
+
         #endregion
 
         #region props
