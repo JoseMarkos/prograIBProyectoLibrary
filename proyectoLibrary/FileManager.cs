@@ -118,30 +118,7 @@ namespace proyectoLibrary
                         sw.Write("\n");
                     }
                 }
-
-                //foreach (var item in list)
-                //{
-                //    sw.Write(item.Name is null ? "" : "" + item.Name);
-                //    sw.Write(", " + (int)item.Quadrant);
-
-                //    // Services
-                //    sw.Write(", |");
-
-                //    // MessageBox.Show(item.Services);
-
-                //    sw.Write(item.Services.Count);
-
-                //    sw.Write("|");
-
-                //    // End Services
-
-                //    sw.Write(item.NormalSizeCapacity < 0 ? ", " : ", " + item.NormalSizeCapacity);
-                //    sw.Write(item.BigSizeCapacity < 0 ? ", " : ", " + item.BigSizeCapacity);
-                //    sw.Write(", " + item.FreeSpaces);
-
-                //    sw.Write("\n");
-                //}
-
+                
                 sw.Close();
                 fileStream.Close();
             }

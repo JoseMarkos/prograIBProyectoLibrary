@@ -53,9 +53,13 @@ namespace proyectoLibrary.Modelos
 
         public void DiscountFreeSpaces()
         {
-            freeSpaces -= 1;
-            FreeSpaces = freeSpaces;
+            if (!IsFullHouse())
+            {
+                freeSpaces -= 1;
+                FreeSpaces = freeSpaces;
+            }
         }
+
         public byte GetFreeSpaces()
         {
             return freeSpaces;
@@ -63,7 +67,7 @@ namespace proyectoLibrary.Modelos
 
         public bool IsFullHouse()
         {
-            if (freeSpaces > 0)
+            if (FreeSpaces > 0)
             {
                 return false;
             }
