@@ -33,6 +33,7 @@
   <ItemGroup>
     <Compile Include="CuentaParqueo.cs" />
     <Compile Include="FileManager.cs" />
+    <Compile Include="FileRead.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interface\ICuentaParqueo.cs" />
     <Compile Include="Modelos\Vehicle.cs" />

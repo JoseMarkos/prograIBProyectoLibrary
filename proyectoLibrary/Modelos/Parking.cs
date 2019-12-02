@@ -56,8 +56,12 @@ namespace proyectoLibrary.Modelos
             freeSpaces -= 1;
             FreeSpaces = freeSpaces;
         }
+        public byte GetFreeSpaces()
+        {
+            return freeSpaces;
+        }
 
-        private bool IsFullHouse()
+        public bool IsFullHouse()
         {
             if (freeSpaces > 0)
             {
@@ -65,6 +69,33 @@ namespace proyectoLibrary.Modelos
             }
 
             return true;
+        }
+
+        public List<ParkingQuadrant> GetQuadrantBros(ParkingQuadrant quadrant)
+        {
+            List<ParkingQuadrant> list = new List<ParkingQuadrant>();
+
+            switch (quadrant)
+            {
+                case ParkingQuadrant.NorthEast:
+                    list.Add(ParkingQuadrant.NorthWest);
+                    list.Add(ParkingQuadrant.SouthEast);
+                    break;
+                case ParkingQuadrant.NorthWest:
+                    list.Add(ParkingQuadrant.NorthEast);
+                    list.Add(ParkingQuadrant.SouthWest);
+                    break;
+                case ParkingQuadrant.SouthEast:
+                    list.Add(ParkingQuadrant.SouthWest);
+                    list.Add(ParkingQuadrant.NorthEast);
+                    break;
+                case ParkingQuadrant.SouthWest:
+                    list.Add(ParkingQuadrant.SouthEast);
+                    list.Add(ParkingQuadrant.NorthWest);
+                    break;
+            }
+
+            return list;
         }
     }
 }
