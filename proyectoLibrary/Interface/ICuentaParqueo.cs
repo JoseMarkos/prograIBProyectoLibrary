@@ -25,5 +25,7 @@ namespace proyectoLibrary.Interface
         /// </summary>
         /// <param name="parqueo"></param>
         void GuardarParqueo(string parqueo);
+        
+        void GuardarServicios(List<string> listaServicios);
     }
 }

@@ -19,6 +19,8 @@ namespace proyectoLibrary
 
         public string ParqueoElegido;
 
+        public List<string> ListaServicios;
+
         #endregion
 
         public CuentaParqueo()
@@ -41,5 +43,10 @@ namespace proyectoLibrary
         }
 
         public void GuardarParqueo(string parqueo) => ParqueoElegido = parqueo;
+
+        public void GuardarServicios(List<string> listaServicios)
+        {
+            ListaServicios = listaServicios;
+        }
     }
 }
