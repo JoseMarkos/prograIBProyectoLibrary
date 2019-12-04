@@ -2,12 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace proyectoLibrary
 {
     public sealed class FileManager
     {
-        public static int counter = 0;
+        public static int parkingCounter = 0;
+        public static int vehicleCounter = 0;
 
         private static string Year = DateTime.Now.Year.ToString();
         private static string Month = DateTime.Now.Month.ToString();
@@ -20,15 +22,17 @@ namespace proyectoLibrary
 
         public FileManager()
         {
-            counter++;
+            parkingCounter++;
+            vehicleCounter++;
         }
 
         public void CreateVehicleFile()
         {
+            MessageBox.Show(vehicleCounter.ToString());
             // create just once
-            if (counter < 2)
+            if (vehicleCounter < 2)
             {
-                _ = Directory.CreateDirectory(CurrentVehiclesFile);
+                _ = Directory.CreateDirectory(CurrentVehiclesDirectory);
             }
 
             Stream stream = File.Create(CurrentVehiclesFile);
@@ -38,7 +42,7 @@ namespace proyectoLibrary
         public void CreateParkingFile()
         {
             // create just once
-            if (counter < 2)
+            if (parkingCounter < 2)
             {
                 _ = Directory.CreateDirectory(CurrentParkingsDirectory);
             }
@@ -49,10 +53,9 @@ namespace proyectoLibrary
 
         public void WriteVehicleFile(List<Vehicle> source)
         {
-            FileManager fileManager = new FileManager();
             List<Vehicle> list = source;
 
-            fileManager.CreateVehicleFile();
+            CreateVehicleFile();
 
             using (FileStream fileStream = new FileStream(CurrentVehiclesFile, FileMode.Open, FileAccess.ReadWrite))
             {
@@ -75,10 +78,9 @@ namespace proyectoLibrary
 
         public void WriteParkingFile(List<Parking> source)
         {
-            FileManager fileManager = new FileManager();
             List<Parking> list = source;
 
-            fileManager.CreateParkingFile();
+            CreateParkingFile();
 
             using (FileStream fileStream = new FileStream(CurrentParkingFile, FileMode.Open, FileAccess.ReadWrite))
             {
