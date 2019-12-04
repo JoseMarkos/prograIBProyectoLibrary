@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows.Forms;
 
 namespace proyectoLibrary
 {
@@ -28,7 +27,6 @@ namespace proyectoLibrary
 
         public void CreateVehicleFile()
         {
-            MessageBox.Show(vehicleCounter.ToString());
             // create just once
             if (vehicleCounter < 2)
             {
@@ -120,7 +118,7 @@ namespace proyectoLibrary
                         sw.Write("\n");
                     }
                 }
-                
+
                 sw.Close();
                 fileStream.Close();
             }
