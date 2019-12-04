@@ -135,7 +135,7 @@ namespace proyectoLibrary
             }
         }
 
-        private string GetCurrentVehiclesFile()
+        public string GetCurrentVehiclesFile()
         {
             return CurrentVehiclesFile;
         }
