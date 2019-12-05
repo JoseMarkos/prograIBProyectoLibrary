@@ -18,7 +18,6 @@ namespace proyectoLibrary
         private static string CurrentVehiclesFile = CurrentVehiclesDirectory + "\\" + Day + ".txt";
         private static string CurrentParkingFile = CurrentParkingsDirectory + "\\" + Day + ".txt";
 
-
         public FileManager()
         {
             parkingCounter++;
@@ -143,5 +142,9 @@ namespace proyectoLibrary
             return CurrentParkingFile;
         }
 
+        public void SetCurrentVehiclesFile(string filePath)
+        {
+            CurrentVehiclesFile = filePath;
+        }
     }
 }
