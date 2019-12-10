@@ -34,6 +34,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter\CurrentParkingAdapter.cs" />
     <Compile Include="CuentaParqueo.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="FileRead.cs" />

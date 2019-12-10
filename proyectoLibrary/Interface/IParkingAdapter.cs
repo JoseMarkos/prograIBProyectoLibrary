@@ -9,6 +9,12 @@ namespace proyectoLibrary.Interface
 {
     interface IParkingAdapter
     {
-        public List<Parking> GetPakingList();
+        enum Source
+        {
+            Curret,
+            Imported
+        }
+        
+        List<Parking> GetPakingList();
     }
 }
