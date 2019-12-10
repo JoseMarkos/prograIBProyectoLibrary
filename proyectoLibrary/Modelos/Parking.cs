@@ -60,6 +60,15 @@ namespace proyectoLibrary.Modelos
             }
         }
 
+        public void IncreaseFreeSpaces()
+        {
+            if (freeSpaces < Capacity)
+            {
+                freeSpaces += 1;
+                FreeSpaces = freeSpaces;
+            }
+        }
+
         public byte GetFreeSpaces()
         {
             return freeSpaces;
