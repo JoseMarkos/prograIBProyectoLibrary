@@ -50,7 +50,12 @@ namespace proyectoLibrary
 
                 _parking = lineArray[4] is null ? "" : lineArray[4].Substring(1);
 
-                Vehicle vehicle = new Vehicle(_owner, _ownerID, _type, _licensePlate, _parking);
+                Vehicle vehicle = new Vehicle(
+                    _owner, 
+                    _ownerID, 
+                    _type, 
+                    _licensePlate, 
+                    _parking);
                 listVehicles.Add(vehicle);
             }
 

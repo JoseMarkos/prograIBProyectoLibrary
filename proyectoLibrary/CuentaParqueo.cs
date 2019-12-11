@@ -7,19 +7,17 @@ namespace proyectoLibrary
 {
     public sealed class CuentaParqueo : ICuentaParqueo
     {
-        #region public properties
+        #region properties
+
         private static int id;
+
         public byte ID { get; private set; }
 
         public string NombreCompleto { get; private set; }
 
-        public List<Vehicle> ListaVehiculos;
+        public List<Vehicle> ListaVehiculos = new List<Vehicle>();
 
         public byte Vehiculos { get; private set; }
-
-        public string ParqueoElegido;
-
-        public List<string> ListaServicios;
 
         #endregion
 
@@ -40,13 +38,6 @@ namespace proyectoLibrary
         {
             ListaVehiculos = list;
             Vehiculos = (byte)ListaVehiculos.Count;
-        }
-
-        public void GuardarParqueo(string parqueo) => ParqueoElegido = parqueo;
-
-        public void GuardarServicios(List<string> listaServicios)
-        {
-            ListaServicios = listaServicios;
         }
     }
 }
