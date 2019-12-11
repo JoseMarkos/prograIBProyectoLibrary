@@ -11,6 +11,8 @@ namespace proyectoLibrary
         private static int id;
         public byte ID { get; private set; }
 
+        public string Card { get; private set; }
+
         public string NombreCompleto { get; private set; }
 
         public List<Vehicle> ListaVehiculos;
@@ -31,9 +33,10 @@ namespace proyectoLibrary
 
         ~CuentaParqueo() => id--;
 
-        public void GuardarInformacionPersonal(string nombre)
+        public void GuardarInformacionPersonal(string nombre, string card)
         {
             NombreCompleto = nombre;
+            Card = card;
         }
 
         public void GuardarListaDeCarros(List<Vehicle> list)
