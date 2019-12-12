@@ -13,6 +13,8 @@ namespace proyectoLibrary
 
         public byte ID { get; private set; }
 
+        public long DPI { get; private set; }
+
         public string NombreCompleto { get; private set; }
 
         public List<Vehicle> ListaVehiculos = new List<Vehicle>();
@@ -29,8 +31,9 @@ namespace proyectoLibrary
 
         ~CuentaParqueo() => id--;
 
-        public void GuardarInformacionPersonal(string nombre)
+        public void GuardarInformacionPersonal(long dpi, string nombre)
         {
+            DPI = dpi;
             NombreCompleto = nombre;
         }
 
