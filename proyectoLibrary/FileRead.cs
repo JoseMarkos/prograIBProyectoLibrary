@@ -39,6 +39,7 @@ namespace proyectoLibrary
 
                 _type = (Vehicle.Vehicletype)int.Parse(lineArray[2]);
 
+                // Plate number
                 _licensePlate = lineArray[3] is null ? "" : lineArray[3];
 
                 string[] _licensePlateArray = _licensePlate.Split();
@@ -47,6 +48,7 @@ namespace proyectoLibrary
                 {
                     _licensePlate = _licensePlateArray[1];
                 }
+                // End Plate number
 
                 _parking = lineArray[4] is null ? "" : lineArray[4].Substring(1);
 
@@ -56,6 +58,7 @@ namespace proyectoLibrary
                     _type, 
                     _licensePlate, 
                     _parking);
+
                 listVehicles.Add(vehicle);
             }
 
