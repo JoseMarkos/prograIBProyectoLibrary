@@ -173,31 +173,10 @@ namespace proyectoLibrary
 
                 for (int i = 0; i < list.Count; i++)
                 {
-
                     sw.Write(list[i].ID);
                     sw.Write(", " + list[i].DPI);
                     sw.Write(", " + list[i].NombreCompleto);
                     sw.Write(", " + list[i].Vehiculos);
-
-                    // Vehicles
-                    //sw.Write(", |");
-
-                    //for (int j = 0; j < list[i].ListaVehiculos.Count; j++)
-                    //{
-                    //    if (j == list[i].ListaVehiculos.Count - 1)
-                    //    {
-                    //        sw.Write(list[i].ListaVehiculos[j].ToString());
-                    //    }
-
-                    //    else
-                    //    {
-                    //        sw.Write(list[i].ListaVehiculos[j].ToString() + "ss ");
-                    //    }
-                    //}
-
-                    //sw.Write("|");
-
-                    // End Vehicles
 
                     if (i != list.Count - 2)
                     {

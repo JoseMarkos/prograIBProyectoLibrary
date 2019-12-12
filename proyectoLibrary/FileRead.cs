@@ -53,10 +53,10 @@ namespace proyectoLibrary
                 _parking = lineArray[4] is null ? "" : lineArray[4].Substring(1);
 
                 Vehicle vehicle = new Vehicle(
-                    _owner, 
-                    _ownerID, 
-                    _type, 
-                    _licensePlate, 
+                    _owner,
+                    _ownerID,
+                    _type,
+                    _licensePlate,
                     _parking);
 
                 listVehicles.Add(vehicle);
@@ -81,13 +81,11 @@ namespace proyectoLibrary
             Parking.ParkingQuadrant _parkingQuadrant;
             byte _normal = 0;
             byte _big = 0;
-            int Normal = -10;
-            int Big = -10;
 
             while ((line = streamReader.ReadLine()) != null)
             {
                 string[] lineArray = line.ToString().Split(',');
-                
+
                 List<string> _services = new List<string>();
 
                 _name = lineArray[0] is null ? "" : lineArray[0];

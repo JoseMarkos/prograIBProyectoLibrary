@@ -1,10 +1,11 @@
-﻿using proyectoLibrary.Interface;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using proyectoLibrary.Interface;
 
 namespace proyectoLibrary
 {
-    sealed class CurrentParkingAccountAdapter : IParkingAccountAdapter
+    sealed class FirstParkingAccountAdapter : IParkingAccountAdapter
     {
         private static string Year = DateTime.Now.Year.ToString();
         private static string Month = DateTime.Now.Month.ToString();
@@ -14,7 +15,9 @@ namespace proyectoLibrary
 
         public FileStream GetParkingAccountConnection()
         {
-            return File.Open(CurrentDirectoryFile, FileMode.Append);
+            Directory.CreateDirectory(CurrentDirectory);
+
+            return File.Create(CurrentDirectoryFile);
         }
     }
 }
