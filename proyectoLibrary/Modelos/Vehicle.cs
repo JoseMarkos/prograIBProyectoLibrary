@@ -1,4 +1,6 @@
-﻿namespace proyectoLibrary.Modelos
+﻿using System.Collections.Generic;
+
+namespace proyectoLibrary.Modelos
 {
     public sealed class Vehicle
     {
@@ -60,13 +62,17 @@
         private VehicleSize Size { get; set; }
         public string Parking { get; set; }
 
+        private List<string> ServiceList;
+
         #endregion
 
         public Vehicle(string _owner
             , byte _ownerID
             , Vehicletype _vehicletype
             , string _licensePlate
-            , string _parking)
+            , string _parking
+            , List<string> _serviceList
+            )
         {
             Owner = _owner;
             OwnerID = _ownerID;
@@ -74,6 +80,17 @@
             LicensePlate = _licensePlate;
             SetVehicleSize(Type);
             Parking = _parking;
+            ServiceList = _serviceList;
+        }
+
+        public Vehicle(string owner, byte ownerID, Vehicletype type, string licensePlate, string parking)
+        {
+            Owner = owner;
+            OwnerID = ownerID;
+            Type = type;
+            SetVehicleSize(Type);
+            LicensePlate = licensePlate;
+            Parking = parking;
         }
 
         private void SetVehicleSize(Vehicletype _vehicletype)

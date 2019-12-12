@@ -2,35 +2,32 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 namespace proyectoLibrary
 {
     public sealed class FileManager
     {
-        public static int parkingCounter = 0;
-        public static int vehicleCounter = 0;
-
+        public static int Counter = 0;
+        
         private static string Year = DateTime.Now.Year.ToString();
         private static string Month = DateTime.Now.Month.ToString();
         private static string Day = DateTime.Now.Day.ToString();
         private static string CurrentVehiclesDirectory = Directory.GetCurrentDirectory() + "\\vehicles\\" + Year + "\\" + Month;
         private static string CurrentParkingsDirectory = Directory.GetCurrentDirectory() + "\\parkings\\" + Year + "\\" + Month;
+        private static string CurrentParkingAccountDirectory = Directory.GetCurrentDirectory() + "\\parkingAccounts\\" + Year + "\\" + Month;
         private static string CurrentVehiclesFile = CurrentVehiclesDirectory + "\\" + Day + ".txt";
         private static string CurrentParkingFile = CurrentParkingsDirectory + "\\" + Day + ".txt";
+        private static string CurrentParkingAccountFile = CurrentParkingAccountDirectory + "\\" + Day + ".txt";
 
         public FileManager()
         {
-            parkingCounter++;
-            vehicleCounter++;
+            Counter++;
         }
 
         public void CreateVehicleFile()
         {
-            // create just once
-            if (vehicleCounter < 2)
-            {
-                _ = Directory.CreateDirectory(CurrentVehiclesDirectory);
-            }
+            CreateOnce(CurrentVehiclesDirectory);
 
             Stream stream = File.Create(CurrentVehiclesFile);
             stream.Close();
@@ -38,14 +35,26 @@ namespace proyectoLibrary
 
         public void CreateParkingFile()
         {
-            // create just once
-            if (parkingCounter < 2)
-            {
-                _ = Directory.CreateDirectory(CurrentParkingsDirectory);
-            }
+            CreateOnce(CurrentParkingsDirectory);
 
             Stream stream = File.Create(CurrentParkingFile);
             stream.Close();
+        }
+
+        public void CreateParkingAccountFile()
+        {
+            CreateOnce(CurrentParkingAccountDirectory);
+
+            Stream stream = File.Create(CurrentParkingAccountFile);
+            stream.Close();
+        }
+
+        private void CreateOnce(string path)
+        {
+            if (Counter < 2)
+            {
+                _ = Directory.CreateDirectory(path);
+            }
         }
 
         public void WriteVehicleFile(List<Vehicle> source)
@@ -142,9 +151,42 @@ namespace proyectoLibrary
             return CurrentParkingFile;
         }
 
+        public string GetCurrentParkingAccountFile()
+        {
+            return CurrentParkingAccountFile;
+        }
+
         public void SetCurrentVehiclesFile(string filePath)
         {
             CurrentVehiclesFile = filePath;
+        }
+
+        public void WriteParkingAccountFile(List<CuentaParqueo> source)
+        {
+            List<CuentaParqueo> list = source;
+
+            CreateParkingAccountFile();
+
+            using (FileStream fileStream = new FileStream(CurrentParkingAccountFile, FileMode.Open, FileAccess.ReadWrite))
+            {
+                StreamWriter sw = new StreamWriter(fileStream);
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    sw.Write(list[i].ID);
+                    sw.Write(", " + list[i].DPI);
+                    sw.Write(", " + list[i].NombreCompleto);
+                    sw.Write(", " + list[i].Vehiculos);
+
+                    if (i != list.Count - 2)
+                    {
+                        sw.Write("\n");
+                    }
+                }
+
+                sw.Close();
+                fileStream.Close();
+            }
         }
     }
 }
