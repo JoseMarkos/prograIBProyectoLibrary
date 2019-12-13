@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using proyectoLibrary.Interface;
+using System;
 using System.IO;
-using proyectoLibrary.Interface;
 
 namespace proyectoLibrary
 {
@@ -15,7 +14,7 @@ namespace proyectoLibrary
 
         public FileStream GetParkingAccountConnection()
         {
-            Directory.CreateDirectory(CurrentDirectory);
+            _ = Directory.CreateDirectory(CurrentDirectory);
 
             return File.Create(CurrentDirectoryFile);
         }

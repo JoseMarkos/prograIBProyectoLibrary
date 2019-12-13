@@ -62,7 +62,7 @@ namespace proyectoLibrary.Modelos
         private VehicleSize Size { get; set; }
         public string Parking { get; set; }
 
-        private List<string> ServiceList;
+        public List<string> ServiceList;
 
         #endregion
 

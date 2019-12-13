@@ -11,7 +11,7 @@ namespace proyectoLibrary
 
         private static int id;
 
-        public byte ID { get; private set; }
+        public byte ID { get; set; }
 
         public long DPI { get; private set; }
 

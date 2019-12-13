@@ -74,6 +74,25 @@ namespace proyectoLibrary
                     sw.Write(item.LicensePlate is null ? ", " : ", " + item.LicensePlate);
                     sw.Write(item.Parking is null ? ", " : ", " + item.Parking);
 
+                    // Services
+                    sw.Write(", |");
+
+                    for (int j = 0; j < item.ServiceList.Count; j++)
+                    {
+                        if (j == item.ServiceList.Count - 1)
+                        {
+                            sw.Write(item.ServiceList[j]);
+                        }
+
+                        else
+                        {
+                            sw.Write(item.ServiceList[j] + " ");
+                        }
+                    }
+
+                    sw.Write("|");
+                    // End Services
+
                     sw.Write("\n");
                 }
 
@@ -160,33 +179,6 @@ namespace proyectoLibrary
         {
             CurrentVehiclesFile = filePath;
         }
-
-        public void WriteParkingAccountFile(List<CuentaParqueo> source)
-        {
-            List<CuentaParqueo> list = source;
-
-            CreateParkingAccountFile();
-
-            using (FileStream fileStream = new FileStream(CurrentParkingAccountFile, FileMode.Open, FileAccess.ReadWrite))
-            {
-                StreamWriter sw = new StreamWriter(fileStream);
-
-                for (int i = 0; i < list.Count; i++)
-                {
-                    sw.Write(list[i].ID);
-                    sw.Write(", " + list[i].DPI);
-                    sw.Write(", " + list[i].NombreCompleto);
-                    sw.Write(", " + list[i].Vehiculos);
-
-                    if (i != list.Count - 2)
-                    {
-                        sw.Write("\n");
-                    }
-                }
-
-                sw.Close();
-                fileStream.Close();
-            }
-        }
+     
     }
 }

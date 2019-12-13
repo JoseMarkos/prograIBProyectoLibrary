@@ -27,7 +27,16 @@ namespace proyectoLibrary
                 for (int i = 0; i < cuentaParqueoList.Count; i++)
                 {
                     AddText(fileStream, cuentaParqueoList[i].ID.ToString());
-                    AddText(fileStream, ", " + cuentaParqueoList[i].DPI);
+
+                    if (cuentaParqueoList[i].DPI.ToString().Length < 13)
+                    {
+                        AddText(fileStream, ", 0" + cuentaParqueoList[i].DPI);
+                    }
+                    else
+                    {
+                        AddText(fileStream, ", " + cuentaParqueoList[i].DPI);
+                    }
+
                     AddText(fileStream, ", " + cuentaParqueoList[i].NombreCompleto);
                     AddText(fileStream, ", " + cuentaParqueoList[i].Vehiculos + "\n");
                 }
@@ -47,8 +56,8 @@ namespace proyectoLibrary
         //    string line;
         //    StreamReader streamReader = new StreamReader(CurrentDirectoryFile);
 
-        //    byte _id = 0;
-        //    long _dpi = 0;
+        //    byte id = 0;
+        //    long dpi = 0;
         //    string _fullName;
         //    byte _vehicles;
         //    List<Vehicle> _vehicleList = new List<Vehicle>();
@@ -57,8 +66,8 @@ namespace proyectoLibrary
         //    {
         //        string[] lineArray = line.ToString().Split(',');
 
-        //        _id = byte.Parse(lineArray[0]);
-        //        _dpi = long.Parse(lineArray[1]);
+        //        id = byte.Parse(lineArray[0]);
+        //        dpi = long.Parse(lineArray[1]);
         //        _fullName = lineArray[2] is null ? "" : lineArray[2];
         //        _vehicles = byte.Parse(lineArray[3]);
 
@@ -76,7 +85,7 @@ namespace proyectoLibrary
         //        // End Vehicle List
 
         //        CuentaParqueo cuentaParqueo = new CuentaParqueo();
-        //        cuentaParqueo.GuardarInformacionPersonal(_dpi, _fullName);
+        //        cuentaParqueo.GuardarInformacionPersonal(dpi, _fullName);
         //        cuentaParqueo.GuardarListaDeCarros(_vehicleList);
 
         //        cuentaParqueoList.Add(cuentaParqueo);

@@ -52,12 +52,26 @@ namespace proyectoLibrary
 
                 _parking = lineArray[4] is null ? "" : lineArray[4].Substring(1);
 
+
+                string[] servicesArray = lineArray[5].Split('|');
+
+                servicesArray = servicesArray[1].Split();
+
+                List<string> _services = new List<string>();
+
+
+                for (int i = 0; i < servicesArray.Length; i++)
+                {
+                    _services.Add(servicesArray[i]);
+                }
+
                 Vehicle vehicle = new Vehicle(
                     _owner,
                     _ownerID,
                     _type,
                     _licensePlate,
-                    _parking);
+                    _parking,
+                    _services);
 
                 listVehicles.Add(vehicle);
             }
