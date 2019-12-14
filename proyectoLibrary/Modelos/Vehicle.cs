@@ -13,7 +13,9 @@ namespace proyectoLibrary.Modelos
             HatchBack,
             SUV,
             PickUp,
-            Camioneta
+            Camioneta,
+            Bus_Urbano,
+            Trailer
         }
 
         /// <summary>
@@ -118,6 +120,14 @@ namespace proyectoLibrary.Modelos
                     break;
 
                 case Vehicletype.Camioneta:
+                    Size = VehicleSize.Grande;
+                    break;
+                    
+                case Vehicletype.Bus_Urbano:
+                    Size = VehicleSize.Grande;
+                    break;
+                
+                case Vehicletype.Trailer:
                     Size = VehicleSize.Grande;
                     break;
             }
