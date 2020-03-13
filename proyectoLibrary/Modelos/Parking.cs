@@ -53,7 +53,7 @@ namespace proyectoLibrary.Modelos
 
         public void DiscountFreeSpaces()
         {
-            if (!IsFullHouse())
+            if (IsNotFullHouse())
             {
                 freeSpaces -= 1;
                 FreeSpaces = freeSpaces;
@@ -74,14 +74,9 @@ namespace proyectoLibrary.Modelos
             return freeSpaces;
         }
 
-        public bool IsFullHouse()
+        public bool IsNotFullHouse()
         {
-            if (FreeSpaces > 0)
-            {
-                return false;
-            }
-
-            return true;
+            return (bool)FreeSpaces;
         }
 
         public List<ParkingQuadrant> GetQuadrantBros(ParkingQuadrant quadrant)
